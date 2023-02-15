@@ -16,7 +16,7 @@ export default function AdminStatistika() {
 
   useEffect(() => {
     vratiStatistiku().then(setStatistika)
-  })
+  }, [])
   return (
     <div className={classNames(styles.ekran, styles.maliPadding, styles.white)}>
       <div className={styles.textCentar}>
@@ -31,7 +31,7 @@ export default function AdminStatistika() {
           data={statistika.map(element => {
             return {
               nazivKviza: element.nazivKviza,
-              prosek: 100 * element.prosek / element.maks
+              prosek: element.maks === 0 ? 0 : 100 * element.prosek / element.maks
             }
           })}
           margin={{

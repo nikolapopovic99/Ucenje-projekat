@@ -1,13 +1,12 @@
+import PlusIcon from '@rsuite/icons/Plus';
 import TrashIcon from '@rsuite/icons/Trash';
+import classNames from 'classnames';
 import React, { useEffect, useState } from 'react';
-import { Button, Checkbox, FlexboxGrid, Form, IconButton, Input, Message, Schema, SelectPicker, Table, toaster } from 'rsuite';
-import { obrisiKurs } from '../../servis/kursServis';
+import { Button, Checkbox, FlexboxGrid, Form, IconButton, Input, Schema, SelectPicker, Table } from 'rsuite';
+import styles from '../../App.module.css';
 import { vratiKvizove } from '../../servis/kvizServis';
 import { izmeniPitanje, kreirajPitanje, obrisiPitanje, vratiSvaPitanja } from '../../servis/pitanjeServis';
 import { AdminPitanje, Kviz, Opcija } from '../../tipovi';
-import PlusIcon from '@rsuite/icons/Plus';
-import styles from '../../App.module.css';
-import classNames from 'classnames';
 //@ts-ignore
 const Textarea = React.forwardRef((props, ref) => <Input {...props} as="textarea" ref={ref} />);
 
@@ -48,7 +47,7 @@ export default function AdminPitanja() {
         kvizId: pitanje.kviz.id
       })
     }
-  }, [selPitanjeId])
+  }, [selPitanjeId, pitanja])
 
   return (
     <div className={classNames(styles.ekran, styles.maliPadding, styles.white)}>

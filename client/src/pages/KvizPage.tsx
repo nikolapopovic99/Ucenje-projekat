@@ -26,7 +26,7 @@ export default function KvizPage() {
 
   useEffect(() => {
     vratiPitanjaIzKviza(id).then(setPitanja);
-  }, [])
+  }, [id])
   return (
     <div
       className={classNames(styles.ekran, styles.maliPadding, styles.marginBotton)}

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import classNames from 'classnames';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, ButtonToolbar, Container, Content, FlexboxGrid, Form, Panel, Schema } from 'rsuite';
-import { RegisterUser, User } from '../tipovi';
 import styles from '../App.module.css';
-import classNames from 'classnames';
+import { RegisterUser } from '../tipovi';
 
 const model = Schema.Model({
   username: Schema.Types.StringType().isRequired(),

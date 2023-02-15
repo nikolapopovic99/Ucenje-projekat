@@ -30,7 +30,7 @@ appDataSource.initialize().then(async () => {
             return;
         }
         try {
-            const value = jwt.verify(splited[1], process.env.TOKEN || 'token123', { maxAge: 600 }) as { id: number }
+            const value = jwt.verify(splited[1], 'token123', { maxAge: 600 }) as { id: number }
             const user = await appDataSource.getRepository(User).findOne({
                 where: {
                     id: value.id

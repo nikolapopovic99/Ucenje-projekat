@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Button, FlexboxGrid, Form, IconButton, Input, Message, Schema, Table, toaster, Pagination, SelectPicker } from 'rsuite';
-import { kreirajKurs, obrisiKurs, vratiSveKurseve } from '../../servis/kursServis';
-import { Kurs, Kviz, KvizSearch } from '../../tipovi';
 import TrashIcon from '@rsuite/icons/Trash';
-import { kreirajKviz, obrisiKviz, vratiKvizove } from '../../servis/kvizServis';
-import { useLocation, useNavigate } from 'react-router';
-import * as qs from 'query-string'
-import styles from '../../App.module.css';
 import classNames from 'classnames';
-//@ts-ignore
-const Textarea = React.forwardRef((props, ref) => <Input {...props} as="textarea" ref={ref} />);
+import * as qs from 'query-string';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router';
+import { Button, FlexboxGrid, Form, IconButton, Input, Message, Pagination, Schema, SelectPicker, Table, toaster } from 'rsuite';
+import styles from '../../App.module.css';
+import { vratiSveKurseve } from '../../servis/kursServis';
+import { kreirajKviz, obrisiKviz, vratiKvizove } from '../../servis/kvizServis';
+import { Kurs, Kviz, KvizSearch } from '../../tipovi';
+
 const model = Schema.Model({
   naziv: Schema.Types.StringType().isRequired(),
   kursId: Schema.Types.NumberType().isInteger().isRequired()

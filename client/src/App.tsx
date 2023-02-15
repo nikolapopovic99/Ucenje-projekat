@@ -16,9 +16,7 @@ import { check, login, logout, register } from './servis/loginServis';
 import { User } from './tipovi';
 
 
-// axios.defaults.baseURL = 'http://localhost:8080'
-axios.defaults.baseURL = '/api'
-axios.defaults.validateStatus = status => status >= 200 && status < 400;
+axios.defaults.baseURL = 'http://localhost:8080'
 
 
 function App() {

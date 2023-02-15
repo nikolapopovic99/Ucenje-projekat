@@ -23,7 +23,7 @@ export class UserController {
             return;
         }
         (request as any).user = user;
-        const token = jwt.sign({ id: user.id }, process.env.TOKEN || 'token123')
+        const token = jwt.sign({ id: user.id }, 'token123')
         response.json({
             ...user,
             token
@@ -53,7 +53,7 @@ export class UserController {
             }
         });
         (request as any).user = user;
-        const token = jwt.sign({ id: user.id }, process.env.TOKEN || 'token123')
+        const token = jwt.sign({ id: user.id }, 'token123')
         response.json({
             ...user,
             token
